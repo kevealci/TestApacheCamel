@@ -16,9 +16,10 @@ public class suscriptorMQ extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("activemq:my-activemq-queue")
-                .log("${body}")
+                .log("Antes: ${body}")
                 .unmarshal().json(JsonLibrary.Jackson, Currency.class)
                 .bean(currencyExchangeTransformations)
+                .log("Despues: ${body}")
                 .to("log:received-message-from-active-mq");
     }
 }
