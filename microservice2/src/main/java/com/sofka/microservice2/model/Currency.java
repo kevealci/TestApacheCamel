@@ -1,4 +1,4 @@
-package com.sofka.microservice2;
+package com.sofka.microservice2.model;
 
 import lombok.Data;
 
